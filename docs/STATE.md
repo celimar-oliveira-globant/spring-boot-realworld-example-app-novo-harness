@@ -2,14 +2,14 @@
 
 State: READY              # DISCOVERY | PLANNED | IMPLEMENTING | EVALUATING | FIXING | DOCUMENTING | READY
 Current phase: 3 — Execução incremental por slices
-Last completed phase: 3 — Execução incremental por slices (slice 009 finalizada)
+Last completed phase: 3 — Execução incremental por slices (slice 010 finalizada)
 Active work unit: none    # docs/agent/work/<slug> quando houver
 Baseline AS-IS: 2026-06-24 — docs/AS-IS.md
-Guide audit: 2026-06-24 — docs/GUIDE-AUDIT.md (corrigido em slice 009)
+Guide audit: 2026-06-24 — docs/GUIDE-AUDIT.md (conflitos #1, #2 resolvidos em slices 009, 010)
 
 ## Briefing — o que o próximo agente faz primeiro
-1. Revisar `docs/agent/completed/009-guide-governance-consolidation/SLICE-REPORT.md` e `docs/context/ROADMAP.md`.
-2. Definir a próxima slice (010: governança multi-proto) e acionar Prompt 01 (planner) com novo slug/issue.
+1. Revisar `docs/agent/completed/010-governance-confirmations-protocol/SLICE-REPORT.md` e `docs/context/ROADMAP.md`.
+2. Definir a próxima slice (011: SEQUENCE.yaml canônico) e acionar Prompt 01 (planner) com novo slug/issue.
 
 ## Não faça
 - Não inventar requisitos de produto.
