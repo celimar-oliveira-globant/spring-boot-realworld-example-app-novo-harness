@@ -1,43 +1,13 @@
 # Guia Operacional do Agente
 # Guia de Operacao do Agente
 
-## Estado atual
-- Repositorio: Spring Boot Realworld ExampleApp (Conduit)
-- Stack: Java 11 + Spring Boot 2.6.3 + MyBatis + SQLite
-- Arquitetura: DDD + CQRS, coexistencia REST + GraphQL (Netflix DGS)
-- Ultima analise: 2025-06-18 (auditoria brownfield)
+---
 
-## Workflow padrao
-1. **Onboarding (Prompt 00)**: Criar contexto inicial (STATE, CHARTER, ROADMAP, SOURCES)
-2. **Planejar (Prompt 01)**: Planejar e triar uma slice
-3. **Implementar (Prompt 02)**: Implementar dentro do escopo
-4. **Avaliar (Prompt 03)**: Verificar independentemente
-5. **Revisar seguranca (Prompt 04)**: Para slices C/D
-6. **Encerrar (Prompt 05)**: Closeout e atualizacao de estado
+## **Nota Histórica** *(linhas 4–40 consolidadas em SEQUENCE-CANONICAL.md)*
 
-## Regras criticas
-- PRESERVAR arquitetura DDD + CQRS e coexistencia REST + GraphQL
-- PRESERVAR contrato REST e GraphQL (paridade obrigatoria)
-- NAO decidir trade-offs estruturais sozinho (abrir issue needs-decision)
-- SEGUIR GUIA-DE-REFATORACAO.md como fonte de verdade
-- COMMITAR docs/ (contexto, estado, trabalho) E codigo de produto; NUNCA commitar harness/ (descartavel)
-- CONSULTAR AGENTS.md para politica de confirmacoes (LOW RISK = SEM ASK_USER)
+A versão anterior deste guia continha um bloco "Workflow padrao" (linhas 4–40) descrevendo o fluxo v1 (Prompts 00→05). Esse bloco foi movido para o arquivo histórico e substituído por referência canônica: **`docs/SEQUENCE-CANONICAL.md`**. O guia atual (seção normativa abaixo) descreve o fluxo v2 (Prompts 00a/00b, 01–07) com papéis, gates, e máquina de estados completa. Vide SEQUENCE-CANONICAL.md para diagrama completo e rastreabilidade.
 
-## Pontos de atencao imediatos
-- Stack antiga: Spring Boot 2.6.3, Java 11, Gradle 7.4
-- WebSecurityConfigurerAdapter depreciado (removido no SB3+)
-- 40 usos de javax.* -> jakarta.* obrigatorio no SB3+/4
-- 74 usos de Joda-Time acoplados a persistencia
-- MyBatis -> JPA_migration e maior risco tecnico (SQLite sem dialeto oficial)
-
-## Caminhos de escala (risco A-D)
-- trivial: docs/typo/formatacao
-- fast_A: codigo sem fronteira de confianca
-- standard_B: toca codigo executavel ou DB
-- strict_C_D: toca auth, secrets, externo, crypto, dados regulados
-
-## Rasgos estrategicos (do GUIA)
-1. Fundacao -> 2. Rede de seguranca (testes de contrato) -> 3. Plataforma (Gradle/Java/Spring) -> 4. Persistencia (JPA) -> 5. Features -> 6. Qualidade -> 7. Operacao
+---
 
 ## Politica unificada de confirmacao e portoes de processo (vale para todos os papeis)
 **Confirmação de OPERAÇÃO TÉCNICA** — NUNCA solicite para low/medium risk:

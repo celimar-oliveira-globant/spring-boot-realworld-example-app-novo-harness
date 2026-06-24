@@ -121,3 +121,12 @@ Data: 2026-06-24 — issues #11, #12
 - ✓ #3: SEQUENCE + máquina de estados (slice 011)
 - ✓ #4: .gitignore canonical (slice 012)
 - ⧖ #5,#6,#7,#8: pendentes
+
+### Slice 013: Conflito #5 (workflow legacy block cleanup)
+- **Antes:** Linhas 4–40 descreviam fluxo v1 (00→05) conflitando com v2 (00a/00b, 01–07)
+- **Depois:** 
+  - Removidas linhas 4–40 (Estado atual, Workflow padrao, Regras criticas, Pontos de atencao, Caminhos de escala, Rasgos estrategicos)
+  - Substituído por "Nota Histórica" referenciando SEQUENCE-CANONICAL.md como autoridade
+  - Seção normativa (42+) intacta e coerente
+  - Alinhado com v2 (Prompts 00a/00b, 01–07)
+- **Status:** ✓ CORRIGIDO
