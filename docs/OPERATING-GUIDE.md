@@ -279,6 +279,31 @@ Antes de iniciar um turno, o agente **reivindica** a slice em `STATE.md`:
 já houver claim ativa de outra sessão na mesma slice, **pare** e reporte em vez de
 escrever por cima. Liberação acontece no handoff.
 
+### Mini-protocolo obrigatório de claim/release (Slice 015 — formalizando Conflito #7)
+1. **Início de slice (planner, Prompt 01):**
+   - Antes de escrever qualquer coisa em `docs/agent/work/<slug>/`, setar em `STATE.md`:
+     ```
+     claimed_by: <nome do agente ou ID da sessão>
+     claimed_at: <ISO timestamp>
+     ```
+   - Registrar no `PROGRESS.md`: "Claim iniciado em <timestamp>"
+
+2. **Cada turno dentro da slice (todos os papéis):**
+   - No início, **sempre** verificar: `grep -A1 "claimed_by" STATE.md`
+   - Se `claimed_by` é diferente do agente atual E `claimed_at` está em menos de 2 horas: **abortar**
+   - Se expirou (>2 horas): sobrescrever com novo claim e registrar em `PROGRESS.md`
+   - Se é o mesmo agente: prosseguir normalmente
+
+3. **Fim de slice (closer, Prompt 05):**
+   - No handoff final, limpar ou atualizar claim:
+     ```
+     claimed_by: none
+     claimed_at: <liberação>
+     ```
+   - Registrar em `PROGRESS.md`: "Claim liberado em <timestamp>; slice pronta para próximo ciclo"
+
+**Regra:** Violação (sobrescrever claim ativo sem verificar) é proibida. Prompts que escrevem em `docs/` devem honrar este protocolo.
+
 ## Aprendizado entre slices
 O doc_gardener (07) destila lições em `docs/context/LESSONS.md`. O planner (01) lê
 esse arquivo no início e cita qualquer `planner_hint` aplicável ao classificar a

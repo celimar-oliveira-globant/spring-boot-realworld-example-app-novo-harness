@@ -137,3 +137,30 @@ Data: 2026-06-24 — issues #11, #12
 - **Marcação:** Nenhuma ação adicional; apenas documentar que #6 foi resolvido como consequência de #5
 - **Status:** ✓ CORRIGIDO (colateral)
 
+
+### Slice 015: Conflito #7 (concorrência claimed_by/claimed_at protocol)
+- **Antes:** Guia exigia `claimed_by/claimed_at` em STATE.md mas prompts não padronizavam criação/liberação
+- **Depois:** 
+  - Adicionada seção "Mini-protocolo obrigatório de claim/release" em OPERATING-GUIDE.md (linhas 282–305)
+  - 3 regras formalizadas: (1) início (planner), (2) verificação (cada turno), (3) limpeza (closer)
+  - Timeout: 2 horas para claim ativo; após expira, pode sobrescrever
+  - Referência apontando que prompts devem honrar protocolo
+- **Status:** ✓ CORRIGIDO
+
+## Resumo final: Conflitos 1–7 resolvidos (slices 009–015)
+
+| # | Assunto | Slice | Status |
+|---|---|---|---|
+| 1 | docs/ commit rule | 009 | ✓ CORRIGIDO |
+| 2 | Confirmação unificada | 010 | ✓ CORRIGIDO |
+| 3 | SEQUENCE + máquina de estados | 011 | ✓ CORRIGIDO |
+| 4 | .gitignore canonical | 012 | ✓ CORRIGIDO |
+| 5 | Workflow legacy block | 013 | ✓ CORRIGIDO |
+| 6 | GUIA-DE-REFATORACAO orphan | 014 | ✓ CORRIGIDO (colateral 013) |
+| 7 | claimed_by/claimed_at protocol | 015 | ✓ CORRIGIDO |
+| 8 | Custo thresholds (alerta/stop) | — | ⧖ PENDENTE (slice 016+) |
+
+## Conclusão
+
+7 de 8 conflitos de GUIDE-AUDIT resolvidos. Conflito #8 (custo) está pendente e será escopo de slice 016.
+Governance phase (slices 009–015) concluída com sucesso. Próximas slices podem focar em trabalho de produto.
