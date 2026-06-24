@@ -164,3 +164,17 @@ Data: 2026-06-24 — issues #11, #12
 
 7 de 8 conflitos de GUIDE-AUDIT resolvidos. Conflito #8 (custo) está pendente e será escopo de slice 016.
 Governance phase (slices 009–015) concluída com sucesso. Próximas slices podem focar em trabalho de produto.
+
+### Slice 016: Conflito #8 (cost thresholds operationalization)
+- **Antes:** Guia mencionava `budget_max_usd` e enforcement mas faltavam limiares concretos
+- **Depois:** 
+  - Adicionada seção "Operacionalização de custo: limiares padrão" em OPERATING-GUIDE.md
+  - ALERT: 80% de budget → log warning, continua
+  - STOP: 100% de budget → halt workflow, exige user decision
+  - Exceção: force_continue (com evidência em PROGRESS.md)
+  - Regra: custo explícito em PLAN + atualizado a cada turno
+- **Status:** ✓ CORRIGIDO
+
+## Status final: Governance Phase (slices 009–016) — 8/8 CONFLITOS RESOLVIDOS ✓
+
+Todos os conflitos de GUIDE-AUDIT foram resolvidos. Documentação governança agora é coerente e operacional.

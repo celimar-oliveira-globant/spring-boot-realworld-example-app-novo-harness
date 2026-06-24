@@ -272,6 +272,34 @@ evaluator/reviewer deve ser de FAMÍLIA de modelo diferente do generator.
 registra `custo_real` vs. `budget_max_usd`. Estouro > 50% exige a nota `## Drift`
 em PROGRESS.md. *"Mais agentes" nunca resolve estouro — disciplina de tier resolve.*
 
+
+### Operacionalização de custo: limiares padrão (Slice 016 — formalizando Conflito #8)
+**ALERT threshold: 80% de `budget_max_usd`**
+- Quando `custo_real` atinge 80% de `budget_max_usd`, o agente **registra em PROGRESS.md:**
+  ```markdown
+  ## Cost Alert
+  - Current: $X.XX / $Y.YY (80% da meta)
+  - Action: Continuar, mas reavaliar tier/parallelization
+  ```
+- Workflow continua normalmente, mas com avisos registrados.
+
+**STOP threshold: 100% de `budget_max_usd`**
+- Quando `custo_real` atinge ou ultrapassa `budget_max_usd`, o agente **aborta workflow:**
+  ```markdown
+  ## Cost STOP
+  - Current: $X.XX / $Y.YY (100% ou acima da meta)
+  - Status: WORKFLOW HALTED
+  - Next: Aguardando decision from user (continue com override ou encerrar slice)
+  ```
+- **Não avança** para próximo turno/papel sem decisão do usuário.
+
+**Exceção: force_continue (somente se usuário autorizar)**
+- Usuário pode passar `force_continue: true` em resposta ao STOP
+- Agente registra evidência em PROGRESS.md (motivo da override, usuário + timestamp)
+- Workflow retoma; **risco de overbudget fica registrado em SLICE-REPORT.md**
+
+**Regra:** Custo deve estar explícito em PLAN.md (`budget_max_usd`, `estimated_tier`) e atualizado a cada turno em PROGRESS.md. Surpresa de custo no closeout é falha de governança.
+
 ## Concorrência de workspace
 `docs/STATE.md` é ponteiro único; dois agentes na mesma slice = corrida de escrita.
 Antes de iniciar um turno, o agente **reivindica** a slice em `STATE.md`:
