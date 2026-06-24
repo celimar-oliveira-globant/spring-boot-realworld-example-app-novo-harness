@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,26 +14,18 @@ public class ErrorResourceSerializer extends JsonSerializer<ErrorResource> {
   @Override
   public void serialize(ErrorResource value, JsonGenerator gen, SerializerProvider serializers)
       throws IOException, JsonProcessingException {
-    Map<String, List<String>> json = new HashMap<>();
+    Map<String, List<String>> errorsByField = new LinkedHashMap<>();
     gen.writeStartObject();
     gen.writeObjectFieldStart("errors");
     for (FieldErrorResource fieldErrorResource : value.getFieldErrors()) {
-      if (!json.containsKey(fieldErrorResource.getField())) {
-        json.put(fieldErrorResource.getField(), new ArrayList<String>());
-      }
-      json.get(fieldErrorResource.getField()).add(fieldErrorResource.getMessage());
+      errorsByField.computeIfAbsent(fieldErrorResource.getField(), key -> new ArrayList<>());
+      errorsByField.get(fieldErrorResource.getField()).add(fieldErrorResource.getMessage());
     }
-    for (Map.Entry<String, List<String>> pair : json.entrySet()) {
+    for (Map.Entry<String, List<String>> pair : errorsByField.entrySet()) {
       gen.writeArrayFieldStart(pair.getKey());
-      pair.getValue()
-          .forEach(
-              content -> {
-                try {
-                  gen.writeString(content);
-                } catch (IOException e) {
-                  e.printStackTrace();
-                }
-              });
+      for (String content : pair.getValue()) {
+        gen.writeString(content);
+      }
       gen.writeEndArray();
     }
     gen.writeEndObject();
