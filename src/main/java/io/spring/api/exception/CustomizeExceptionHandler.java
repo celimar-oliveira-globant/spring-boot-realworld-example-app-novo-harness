@@ -98,12 +98,11 @@ public class CustomizeExceptionHandler extends ResponseEntityExceptionHandler {
     return new ErrorResource(errors);
   }
 
-  private String getParam(String s) {
-    String[] splits = s.split("\\.");
-    if (splits.length == 1) {
-      return s;
-    } else {
-      return String.join(".", Arrays.copyOfRange(splits, 2, splits.length));
+  private String getParam(String pathValue) {
+    String[] segments = pathValue.split("\\.");
+    if (segments.length <= 2) {
+      return segments[segments.length - 1];
     }
+    return String.join(".", Arrays.copyOfRange(segments, 2, segments.length));
   }
 }
