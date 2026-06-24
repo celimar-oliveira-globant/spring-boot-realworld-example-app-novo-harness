@@ -33,8 +33,10 @@
 | docs/agent/completed/007-rest-validation-path-extraction-robustness/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da sétima slice concluída (robustez na extração de campo em erro de validação REST) |
 | docs/agent/completed/008-rest-error-serializer-determinism/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da oitava slice concluída (determinismo e robustez no serializer de erros REST) |
 | docs/agent/completed/009-guide-governance-consolidation/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da nona slice concluída (consolidação de conflitos normativos no OPERATING-GUIDE) |
-| docs/OPERATING-GUIDE.md | outro | authoritative | in-repo | Contrato operacional unificado (bloco de confirmação + portões de processo canônicos) |
+| docs/agent/completed/010-governance-confirmations-protocol/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da décima slice concluída (consolidação de confirmação + portões de processo) |
+| docs/OPERATING-GUIDE.md | outro | authoritative | in-repo | Contrato operacional unificado (bloco de confirmação + portões de processo canônicos; refs SEQUENCE-CANONICAL) |
 | docs/GUIDE-AUDIT.md | outro | authoritative | in-repo | Auditoria de coerência do guia operacional e artefatos relacionados |
+| docs/SEQUENCE-CANONICAL.md | outro | authoritative | in-repo | Ordem canônica de papéis, gates e fluxo; consolida SEQUENCE.yaml + 99-start-slice.md (fonte única de verdade) |
 
 ## Notas
 - Não foram encontrados documentos formais do tipo **PRD**, **ADR** ou **DESIGN** no escopo fornecido.

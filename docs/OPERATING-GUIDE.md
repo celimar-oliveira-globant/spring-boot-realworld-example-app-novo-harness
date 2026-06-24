@@ -186,6 +186,10 @@ caminho declarado, aborte e reclassifique. Na dúvida, escale para o caminho mai
 alto.
 
 ## Papéis (um papel por turno, com handoff entre turnos)
+
+**Ordem canônica e completa:** Veja `docs/SEQUENCE-CANONICAL.md` para tabelas detalhadas, condições de entrada, saídas e gates de cada papel.
+
+Resumo:
 planner → (designer) → builder | refactorer → evaluator →
 (reviewer/security_reviewer) → (qa → test_author) → (e2e_tester) →
 closer → integrator → doc_gardener.
