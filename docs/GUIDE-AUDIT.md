@@ -80,3 +80,44 @@ Data: 2026-06-24 — issue #10 — builder (Prompt 02)
 
 ### Conclusão desta slice
 Conflitos de alta severidade #1 e #4 resolvidos. O guia agora é coerente em regras críticas de commit e padronização de nomes. Demais conflitos identificados no audit são multiproto (requerem propagação em vários prompts) e ficarão para slices futuras de governança.
+
+## Correções aplicadas (Slices 010–011)
+Data: 2026-06-24 — issues #11, #12
+
+### Slice 010: Conflito #2 (política de confirmação unificada)
+- **Antes:** 3 prompts (01, 03b, 05) tinham exigências de confirmação divergentes (plano, testes, próxima slice)
+- **Depois:** Bloco canônico "Politica unificada de confirmacao e portoes de processo" em OPERATING-GUIDE.md (linhas 42–58) consolida:
+  - 3 pausas bloqueantes (pending_decision, red_flag C/D, human approval C/D)
+  - 3 portões de processo (plan_approval, qa_gate_03b→03c, auto-continue)
+  - Cada prompt referencia o bloco; sem duplicação
+- **Status:** ✓ CORRIGIDO
+
+### Slice 011: Conflito #3 (ordem de papéis em SEQUENCE, máquina de estados)
+- **Antes:** SEQUENCE.yaml (139 linhas) + 99-start-slice.md + OPERATING-GUIDE.md (linha 98: máquina) não alinhados; "REVIEWING" no enum mas não na máquina; ordem ambígua 05/06/07
+- **Depois:** 
+  - Criado `docs/SEQUENCE-CANONICAL.md` (~120 linhas) consolidando SEQUENCE.yaml + 99-start + OPERATING-GUIDE.md em tabelas coerentes
+  - Máquina de estados (DISCOVERY → PLANNED → IMPLEMENTING → EVALUATING → FIXING → DOCUMENTING → READY) confirmada em SEQUENCE-CANONICAL
+  - Ordem única: 05→06→07 (closer → integrator → doc_gardener) documentada explicitamente
+  - "REVIEWING" alinhado a handoff final de 04 (reviewer) antes de 05
+- **Status:** ✓ CORRIGIDO
+
+### Slice 012: Conflito #4 (.gitignore canonical rules)
+- **Antes:** .gitignore linha 29 tinha /harness/ (correto), mas falta documentação canônica
+- **Depois:** 
+  - Validado .gitignore: /harness/ ativa e correto
+  - Criado `docs/.gitignore-CANONICAL.md` documentando regras: docs/ committed, harness/ gitignored
+  - Alinhado com OPERATING-GUIDE.md "Layout de arquivos"
+- **Status:** ✓ CORRIGIDO
+
+## Pendências residuais (para slices 013+)
+1. **Conflito #5** (workflow inicial legado): Bloco linhas 4–40 vs fluxo v2 (00a/00b/06/07)
+2. **Conflito #6** (referência órfã GUIA-DE-REFATORACAO.md): arquivo não existe
+3. **Conflito #7** (protocolo de concorrência): claimed_by/claimed_at não padronizado em prompts
+4. **Conflito #8** (limiares de custo): alerta/stop de budget subjetivo; falta operacionalização
+
+## Resumo: Conflitos resolvidos (009–012)
+- ✓ #1: docs/ commit (slice 009)
+- ✓ #2: confirmação unificada (slice 010)
+- ✓ #3: SEQUENCE + máquina de estados (slice 011)
+- ✓ #4: .gitignore canonical (slice 012)
+- ⧖ #5,#6,#7,#8: pendentes
