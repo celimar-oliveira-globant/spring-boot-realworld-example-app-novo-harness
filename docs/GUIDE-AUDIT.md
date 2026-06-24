@@ -130,3 +130,10 @@ Data: 2026-06-24 — issues #11, #12
   - Seção normativa (42+) intacta e coerente
   - Alinhado com v2 (Prompts 00a/00b, 01–07)
 - **Status:** ✓ CORRIGIDO
+
+### Slice 014: Conflito #6 (GUIA-DE-REFATORACAO orphaned reference) — VALIDAÇÃO
+- **Status:** Resolvido colateralmente em slice 013
+- **Evidência:** grep GUIA-DE-REFATORACAO em OPERATING-GUIDE.md → não encontrado (linha 22 antiga removida em 013)
+- **Marcação:** Nenhuma ação adicional; apenas documentar que #6 foi resolvido como consequência de #5
+- **Status:** ✓ CORRIGIDO (colateral)
+
