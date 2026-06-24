@@ -39,16 +39,23 @@
 ## Rasgos estrategicos (do GUIA)
 1. Fundacao -> 2. Rede de seguranca (testes de contrato) -> 3. Plataforma (Gradle/Java/Spring) -> 4. Persistencia (JPA) -> 5. Features -> 6. Qualidade -> 7. Operacao
 
-## Politica de confirmacao (vale para todos os papeis 01-05 e para o 99)
-NUNCA solicite confirmacao para operacoes low/medium risk (allowlist do AGENTS.md:
-navegacao, leitura, mv/cp/mkdir, git *, build/test, edicao de arquivos).
+## Politica unificada de confirmacao e portoes de processo (vale para todos os papeis)
+**Confirmação de OPERAÇÃO TÉCNICA** — NUNCA solicite para low/medium risk:
+- navegacao, leitura, ls, grep, find, mv/cp/mkdir, git * (qualquer), build/test, edição de arquivos
+
 Execute-as direto e registre o resultado.
 
-Pausas (ask_user) sao permitidas APENAS em tres casos:
-  (a) pending_decision arquitetural — escolha de stack/framework/banco;
-  (b) red flag de seguranca em slice C/D;
-  (c) aprovacao humana obrigatoria de C/D antes do merge.
-Fora desses tres casos: nao pergunte — execute e siga ao proximo passo.
+**Pausas (ask_user) — OPERAÇÕES/DECISÕES BLOQUEANTES** permitidas em TRÊS casos:
+  1. **pending_decision arquitetural** — escolha de stack/framework/banco (exige usuário decidir)
+  2. **red flag de segurança** em slice C/D (defesa: para validação humana antes de prosseguir)
+  3. **aprovação humana obrigatória** (C/D antes do merge, ou compliance workflow específico)
+
+**PORTÕES DE PROCESSO** — confirmações de fluxo (NOT bloqueantes a nível de operação, mas de decisão):
+  - **Aprova plano (Prompt 01)**: planner propõe PLAN.md; usuário diz "ok" ou pede mudança antes de implementar
+  - **Autoriza testes (Prompt 03b→03c)**: qa mede cobertura, para, aguarda confirmação antes de criar testes
+  - **Continua próxima slice (Prompt 05 + 99)**: closeout apresenta SLICE-REPORT, aguarda 10s por intervenção; sem resposta, avança
+
+Regra: **dentro de um turno, execute operações técnicas direto. Entre turnos/slices, pausas de processo são formalizadas no handoff como `next_role` e aguardam contexto novo (usuário lê, toma ação).**
 
 
 

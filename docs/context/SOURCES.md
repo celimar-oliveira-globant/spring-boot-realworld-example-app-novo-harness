@@ -32,6 +32,9 @@
 | docs/agent/completed/006-graphql-onexception-deprecation-boundary/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da sexta slice concluída (supressão localizada de depreciação inevitável no boundary `onException`) |
 | docs/agent/completed/007-rest-validation-path-extraction-robustness/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da sétima slice concluída (robustez na extração de campo em erro de validação REST) |
 | docs/agent/completed/008-rest-error-serializer-determinism/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da oitava slice concluída (determinismo e robustez no serializer de erros REST) |
+| docs/agent/completed/009-guide-governance-consolidation/SLICE-REPORT.md | outro | reference | in-repo | Relatório final consolidado da nona slice concluída (consolidação de conflitos normativos no OPERATING-GUIDE) |
+| docs/OPERATING-GUIDE.md | outro | authoritative | in-repo | Contrato operacional unificado (bloco de confirmação + portões de processo canônicos) |
+| docs/GUIDE-AUDIT.md | outro | authoritative | in-repo | Auditoria de coerência do guia operacional e artefatos relacionados |
 
 ## Notas
 - Não foram encontrados documentos formais do tipo **PRD**, **ADR** ou **DESIGN** no escopo fornecido.
