@@ -1,5 +1,7 @@
 .gradle
 /build/
+/bin/
+/harness/
 !gradle/wrapper/gradle-wrapper.jar
 *.db
 
