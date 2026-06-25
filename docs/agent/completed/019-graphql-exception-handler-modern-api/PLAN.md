@@ -1,5 +1,7 @@
 # PLAN — 019-graphql-exception-handler-modern-api
 
+- risk_category: A
+
 State: PLANNED
 issue: #19
 

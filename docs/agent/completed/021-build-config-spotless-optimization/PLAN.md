@@ -1,5 +1,7 @@
 # PLAN — 021-build-config-spotless-optimization
 
+- risk_category: B
+
 State: PLANNED
 issue: #21
 

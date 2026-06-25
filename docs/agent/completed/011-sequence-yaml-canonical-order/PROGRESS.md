@@ -1,5 +1,7 @@
 # PROGRESS — 011-sequence-yaml-canonical-order
 
+state: READY
+
 State: IMPLEMENTING
 issue: #12
 
@@ -30,3 +32,14 @@ issue: #12
 ## Riscos residuais
 - Conflitos #4, #5, #6, #7, #8 em GUIDE-AUDIT ainda pendentes
 - SEQUENCE em harness/ pode divergir (mitigado: document referencia docs/ como canonical)
+
+### Handoff
+- state: READY
+- this_turn: closer — slice "011-sequence-yaml-canonical-order" finalizada
+- evidence: docs/agent/completed/011-sequence-yaml-canonical-order/SLICE-REPORT.md
+- open_risks: n/a
+- pending_decision: none
+- next_role: planner
+- next_action: iniciar próxima slice
+- suggested_model: standard | manutenção
+

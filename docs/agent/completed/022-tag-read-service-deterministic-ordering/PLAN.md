@@ -1,5 +1,7 @@
 # PLAN — 022-tag-read-service-deterministic-ordering
 
+- risk_category: A
+
 State: PLANNED
 issue: #22
 

@@ -1,5 +1,7 @@
 # PLAN — 018-error-resource-serializer-io-safety
 
+- risk_category: A
+
 State: PLANNED
 issue: #18
 

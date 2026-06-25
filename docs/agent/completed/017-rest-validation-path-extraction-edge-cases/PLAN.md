@@ -1,5 +1,7 @@
 # PLAN — 017-rest-validation-path-extraction-edge-cases
 
+- risk_category: A
+
 State: PLANNED
 issue: #17
 

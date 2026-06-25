@@ -1,5 +1,7 @@
 # PLAN — 024-security-config-swagger-actuator
 
+- risk_category: B
+
 State: PLANNED
 issue: #24
 

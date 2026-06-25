@@ -1,5 +1,7 @@
 # PLAN — 016-cost-thresholds-operationalize
 
+- risk_category: A
+
 State: PLANNED
 issue: #16
 

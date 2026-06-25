@@ -1,5 +1,7 @@
 # PLAN — 023-actuator-swagger-integration
 
+- risk_category: A
+
 State: PLANNED
 issue: #23
 

@@ -1,5 +1,7 @@
 # PLAN — 015-concurrency-protocol-formalize
 
+- risk_category: A
+
 State: PLANNED
 issue: #15
 

@@ -1,5 +1,7 @@
 # PROGRESS — 009-guide-governance-consolidation
 
+state: READY
+
 State: IMPLEMENTING
 issue: #10
 

@@ -1,5 +1,7 @@
 # PROGRESS — 012-gitignore-canonical-rules
 
+state: READY
+
 State: IMPLEMENTING
 issue: #13
 
@@ -17,3 +19,14 @@ issue: #13
 ## Arquivos alterados
 - docs/.gitignore-CANONICAL.md (novo)
 - docs/GUIDE-AUDIT.md (marcar #4 resolvido)
+
+### Handoff
+- state: READY
+- this_turn: closer — slice "012-gitignore-canonical-rules" finalizada
+- evidence: docs/agent/completed/012-gitignore-canonical-rules/SLICE-REPORT.md
+- open_risks: n/a
+- pending_decision: none
+- next_role: planner
+- next_action: iniciar próxima slice
+- suggested_model: standard | manutenção
+

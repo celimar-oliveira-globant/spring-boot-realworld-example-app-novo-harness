@@ -1,5 +1,7 @@
 # PLAN — 020-tags-query-service-coverage
 
+- risk_category: A
+
 State: PLANNED
 issue: #20
 
